@@ -40,7 +40,7 @@ A stock `rockylinux/rockylinux:10` container, provisioned with Ansible to instal
 
 ## Deviations / Caveats
 
-- Rocky Linux 10's base+AppStream repos do not provide Xvfb, Google Noto Color Emoji, or GNU Unifont (Noto Color Emoji is available via EPEL, which this role deliberately does not enable, to stay close to a stock install). Headless Chromium does not require Xvfb to launch, so this does not block verification, but pages relying on color emoji or Unifont's broad Unicode coverage may render with fallback glyphs. Liberation fonts and scalable X fonts ARE available here, unlike SLES's free BCI image.
+- GNU Unifont is not available in this family's base+AppStream repos without enabling EPEL, which this role deliberately does not, to stay close to a stock install (verified on both Rocky Linux 10 and CentOS Stream 9). Xvfb and Google Noto Color Emoji availability varies by release: absent from Rocky Linux 10's repos (also EPEL-gated there), but present in CentOS Stream 9's AppStream. Headless Chromium does not require Xvfb to launch, so none of this blocks verification, but pages relying on color emoji or Unifont's broad Unicode coverage may render with fallback glyphs on Rocky. Liberation fonts and scalable X fonts ARE available on both, unlike SLES's free BCI image.
 
 
 ## How this works
@@ -67,6 +67,6 @@ Also try the other [OS install targets](https://github.com/elabit/robotmk-starte
 >
 > **This repository is automatically synced from [elabit/robotmk-starter](https://github.com/elabit/robotmk-starter/tree/main/os/rhel).**
 > Do not edit files here directly — changes will be overwritten on the next sync.
-> Last sync: [`a1fcc5a`](https://github.com/elabit/robotmk-starter/commit/a1fcc5a8cf77f7197e131b6182cda142d034f88c)
+> Last sync: [`9e3669c`](https://github.com/elabit/robotmk-starter/commit/9e3669c751d422ad806f0a3f004b0350fc9cbd48)
 
 ---
